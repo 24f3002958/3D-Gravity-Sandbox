@@ -212,3 +212,8 @@ The first command uses today's date; the second, any date you give it.
 - Colliding stellar winds: draw the shock surface where two stars' winds meet, which sits where their wind
   momenta balance, at d / (1 + √η) from the first star with η = Ṁ₂v₂ / Ṁ₁v₁ (the model behind
   [LIFELINE](https://github.com/emossoux/LIFELINE), which computes the X-ray spectra of such systems).
+
+## License
+
+MIT; see [LICENSE](LICENSE). You're free to use, change and share the code, in your own projects too, as
+long as you keep the copyright notice.
