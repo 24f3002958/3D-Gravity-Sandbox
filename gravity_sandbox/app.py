@@ -41,11 +41,11 @@ WARN_COLOUR = (255, 196, 110)
 BAD_COLOUR = (255, 120, 110)
 
 PRESET_KEYS = {
-    pygame.K_2: "solar",
-    pygame.K_3: "solar-live",
-    pygame.K_4: "figure8",
-    pygame.K_6: "supernova",
-    pygame.K_7: "blackhole",
+    pygame.K_1: "solar",
+    pygame.K_2: "solar-live",
+    pygame.K_3: "figure8",
+    pygame.K_4: "supernova",
+    pygame.K_5: "blackhole",
 }
 
 DEBRIS_FRAGMENTS = 400           # pieces a star is torn into by a black hole's tides
@@ -80,7 +80,7 @@ FLASH_FRAMES = 50                # how long a collision flash lasts
 HELP_LINES = [
     ("drag mouse", "rotate the view"),
     ("mouse wheel", "zoom"),
-    ("2 3 4 6 7", "solar system / today's sky (JPL) / figure-8 / supernova / black hole"),
+    ("1 2 3 4 5", "solar system / today's sky (JPL) / figure-8 / supernova / black hole"),
     ("space", "pause"),
     ("up / down", "double / halve the speed"),
     ("R", "restart the preset"),

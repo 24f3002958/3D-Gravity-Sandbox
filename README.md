@@ -34,7 +34,7 @@ environment, uninstall it first (`python -m pip uninstall pygame`), because the 
 |---|---|
 | Drag mouse | Rotate the view |
 | Mouse wheel | Zoom |
-| 2 / 3 / 4 / 6 / 7 | Solar system / today's solar system (live from JPL) / figure-8 / supernova finale / black hole |
+| 1 / 2 / 3 / 4 / 5 | Solar system / today's solar system (live from JPL) / figure-8 / supernova finale / black hole |
 | Space | Pause |
 | Up / Down | Double / halve the speed (also ends the supernova slow motion) |
 | R | Restart the preset |
@@ -60,7 +60,7 @@ You can also choose the starting scene: `python main.py --preset blackhole` (cho
 - **Solar system**: the Sun and eight planets starting from real positions and velocities from
   NASA/JPL Horizons (a snapshot for 2026-11-25 is bundled in `data/`). Each planet's moons are folded into
   it, so "Earth" is really Earth + Moon.
-- **Solar system (live)**: the same, but press 3 to download today's positions (needs internet; falls back
+- **Solar system (live)**: the same, but press 2 to download today's positions (needs internet; falls back
   to the snapshot if the download fails).
 - **Figure-8**: three equal stars chasing each other around a figure-8, a famous periodic solution of the
   three-body problem. Switch to Explicit Euler (I) and watch it gain energy and swell out of shape (about

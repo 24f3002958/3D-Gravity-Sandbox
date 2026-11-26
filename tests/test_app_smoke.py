@@ -19,7 +19,7 @@ def app(monkeypatch):
 
 
 def test_every_offline_preset_draws(app):
-    for key in (pygame.K_2, pygame.K_4, pygame.K_6, pygame.K_7):   # 3 downloads from JPL, so it's left out
+    for key in (pygame.K_1, pygame.K_3, pygame.K_4, pygame.K_5):   # 2 downloads from JPL, so it's left out
         app.handle_key(key)
         for _ in range(10):
             app.step_frame()
@@ -27,11 +27,14 @@ def test_every_offline_preset_draws(app):
         assert app.trails.count == 10
 
 
-def test_keys_1_and_5_no_longer_have_scenes(app):
-    name = app.preset.name
-    app.handle_key(pygame.K_1)
-    app.handle_key(pygame.K_5)
-    assert app.preset.name == name
+def test_keys_1_to_5_pick_the_scenes_in_order(monkeypatch):
+    monkeypatch.setenv("SDL_VIDEODRIVER", "dummy")
+    from gravity_sandbox.app import PRESET_KEYS
+    from gravity_sandbox.presets import PRESETS
+
+    assert PRESET_KEYS == {pygame.K_1: "solar", pygame.K_2: "solar-live", pygame.K_3: "figure8",
+                           pygame.K_4: "supernova", pygame.K_5: "blackhole"}
+    assert sorted(PRESET_KEYS.values()) == sorted(PRESETS)       # every scene has a key
 
 
 def test_controls_and_camera_do_not_crash(app):
@@ -89,7 +92,7 @@ def test_supernova_explodes_in_slow_motion_and_keeps_drawing(app):
 
 
 def test_black_hole_scene_swallows_and_spaghettifies(app):
-    app.handle_key(pygame.K_7)
+    app.handle_key(pygame.K_5)
     assert app.hole is not None and app.lens() is not None and app.black_hole_report()
     app.days_per_second = 10                   # the adaptive timestep still keeps every step accurate
     for _ in range(200):
